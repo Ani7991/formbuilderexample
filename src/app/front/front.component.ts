@@ -1,10 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
- import { MustMatch } from './must-mutch.validator';
-
-
-
 @Component({
   selector: 'app-front',
   templateUrl: './front.component.html',
@@ -23,10 +19,7 @@ export class FrontComponent implements OnInit {
           email: ['', [Validators.required, Validators.email]],
           password: ['', [Validators.required, Validators.minLength(8),Validators.maxLength(32)]],
           confirmPassword: ['', Validators.required],
-         }),{
-           validator: MustMatch('password', 'confirmPassword')
-     
-    }
+         })
   }
     onSubmit() {
       this.submitted = true;

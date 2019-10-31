@@ -1,0 +1,17 @@
+.card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 100px;
+}
+.btn-add-container{
+    margin: 20px;
+}
+.direct-btn{
+    display: flex;
+    justify-content: space-between
+}
+.input{
+    display: flex;
+    flex-direction: column;
+}
