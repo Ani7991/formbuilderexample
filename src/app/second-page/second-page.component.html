@@ -1,54 +1,44 @@
-<div class="card">
-    <form [formGroup]="addForm" (ngOnSubmit)="onSubmit()">
-      <div class="btn-add-container">
-        <button (click)="openCard=true">Add Credit Card</button>
-        <div class="card-content" *ngIf="openCard">
-          <div class="input">
-            <label>Card Number</label>
-            <input type="number" formControlName="cardNumber" required>
-            <div class="error"
-              *ngIf="(addform.get('cardNumber').hasError() && (addform.get('cardNumber').dirty || addform.get('cardNumber').touched)) && isSubmited">
-              <p>error</p>
-            </div>
+<form [formGroup]="addForm" (ngSubmit)="onSubmit()" >
+  <div class="card-content">
+      <div class="form-group ">
+          <label>Card Number</label>
+          <input  appCreditCard  type="text" formControlName="cardNumber" placeholder="Enter your card namber" class="form-control"[ngClass]="{ 'is-invalid': submitted && f.cardNumber.errors}"  required/>
+          <div *ngIf="submitted && f.cardNumber.errors" class="invalid-feedback">
+              <div *ngIf="f.cardNumber.errors.required">Card number is required</div>
           </div>
-          <div class="input">
-            <label>Card Owner</label>
-            <input type="text" formControlName="owner" required>
-          </div>
-          <div class="input">
-            <label>Cvv Number</label>
-            <input type="number" formControlName="cvv" required>
-          </div>
-          <div class="input">
-            <label>Expiration Date</label>
-            <input type="number" formControlName="expiration" required>
-          </div>
+      </div>
+    <!-- <div class="input">
+      <label></label>
+      <input  class="form-control" appCard type="text" formControlName=""  maxlength="19" required>
+      <div class="error" *ngIf="addForm.controls.cardNumber.errors && isSubmited">
+        <p></p>
+      </div>
+    </div> -->
+    <div class="form-group ">
+        <label>Card Owner</label>
+        <input   type="text" formControlName="owner"  class="form-control"[ngClass]="{ 'is-invalid': submitted && f.owner.errors}"  required/>
+        <div *ngIf="submitted && f.owner.errors" class="invalid-feedback">
+            <div *ngIf="f.owner.errors.required">Card owner is required</div>
+            <div *ngIf="f.owner.errors.required">Name should start with Mr or Mrs</div>
         </div>
-      </div>
-      <div class="btn-add-container" >
-        <button (click)="openBilling=true">Add Billing Address</button>
-        <div class="card-content" *ngIf="openBilling">
-          <div class="input">
-            <label>City</label>
-            <input type="text" formControlName="city" required>
-          </div>
-          <div class="input">
-            <label>Street</label>
-            <input type="text" formControlName="street" required>
-          </div>
-          <div class="input">
-            <label>Apartment</label>
-            <input type="text" formControlName="apartment" required>
-          </div>
-          <div class="input">
-            <label>Phone Number</label>
-            <input type="number" formControlName="phoneNumber" required>
-          </div>
+    </div>
+    {{isSubmited}}
+    <div class="small">
+      <div class="input">
+        <label>CVV</label>
+        <input  class="form-control"  type="text" formControlName="cvv" maxlength="3" [ngClass]="{ 'is-invalid': submitted && f.cvv.errors}" required>
+        <div *ngIf="f.cvv.errors && isSubmited">CVV number is required</div>
         </div>
+      <div class="input">
+        <label>Expiration Date</label>
+        <input  class="form-control"  type="text" formControlName="expiration" maxlength="5" [ngClass]="{ 'is-invalid': submitted && f.expiration.errors}"required>
+        <div *ngIf="f.expiration.errors && isSubmited">Expiration date is required</div>
       </div>
-      <div class="direct-btn">
-        <button (click)="goBack()">Back</button>
-        <button type="submit" (click)="isSubmited=true">Next</button>
-      </div>
-    </form>
+    </div>
   </div>
+</form>
+
+
+
+
+

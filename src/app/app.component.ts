@@ -7,4 +7,20 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'registerpage';
+
+  registerActive = false
+  addCardActive = true
+  subscribeActive=false
+  displayRegister(active){
+    this.registerActive=active
+    this.addCardActive=!active
+  }
+  displayAddCard(active){
+    this.addCardActive=active
+    this.registerActive=!active
+  }
+  displaySubscribe(active){
+    this.subscribeActive=active
+    this.addCardActive=!active
+  }
 }

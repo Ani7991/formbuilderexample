@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {FormBuilder,Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-subscribe',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SubscribeComponent implements OnInit {
 
-  constructor() { }
-
+  subscribe = this.fb.group({
+    email:['',Validators.required]
+  })
+  isChecked=false
+  constructor(private fb:FormBuilder) { }
   ngOnInit() {
   }
-
+  
 }

@@ -11,16 +11,18 @@ import { MatchDirective } from './match.directive';
 import { FinalComponent } from './final/final.component';
 import { SubscribeComponent } from './subscribe/subscribe.component';
 import { ResultsComponent } from './results/results.component';
+import { CreditCardDirective } from './credit-card.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     FrontComponent,
-    SecondPageComponent,
+   SecondPageComponent,
     MatchDirective,
-    FinalComponent,
+   FinalComponent,
     SubscribeComponent,
-    ResultsComponent
+    ResultsComponent,
+    CreditCardDirective
   ],
   imports: [
     BrowserModule,

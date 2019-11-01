@@ -3,7 +3,7 @@
     <br>
     <div class="form-group ">
         <label>Username</label>
-        <input type="text" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors}"  required/>
+        <input type="text" formControlName="username"  class="form-control"[ngClass]="{ 'is-invalid': submitted && f.username.errors}"  required/>
         <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
             <div *ngIf="f.username.errors.required">Username is required</div>
         </div>
@@ -37,7 +37,7 @@
 </div>
 <br>
 <div class="text-center">
-    <button class="btn btn-dark mr-1">Next</button>
+    <button class="btn btn-dark ">Next</button>
     <button class="btn btn-secondary" type="reset" (click)="onReset()">Cancel</button>
 </div>
 </form>
