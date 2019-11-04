@@ -18,8 +18,12 @@ export class FinalComponent implements OnInit {
     city:['',Validators.required],
     street:['',Validators.required],
     apartment:['',Validators.required],
-    phoneNumber:['',Validators.required]
-})
+    phoneNumber:['',Validators.required],
+    cardNumber:['',Validators.required],
+  owner:['',Validators.required],
+  cvv:['',[Validators.required,Validators.maxLength(3)]],
+  expiration:['',[Validators.required,Validators.maxLength(5)]],
+  })
 }
 onSubmit() {
   this.submitted = true;
@@ -29,18 +33,19 @@ if (this.addForm.invalid) {
 }
 get f() { return this.addForm.controls; }
 
-openCard=false
-addBilling = false
+openCard=false;
+addBilling = false;
 @Output() cIsActive = new EventEmitter()
-active = true
-isSubmited= false
- cardL = []
+active = true;
+isSubmited= false;
+ cardL = [];
 
 goBack(){
-  this.cIsActive.emit(this.active=false)
+  this.cIsActive.emit(this.active=false);
 }
 addCard(){
-  this.cardL.push("1")
+  this.addForm.valid;
+  this.cardL.push("1");
 }
 
 

@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { FrontComponent } from './front/front.component';
 
 import { ReactiveFormsModule } from '@angular/forms';
-import { SecondPageComponent } from './second-page/second-page.component';
+// import { SecondPageComponent } from './second-page/second-page.component';
 import { MatchDirective } from './match.directive';
 import { FinalComponent } from './final/final.component';
 import { SubscribeComponent } from './subscribe/subscribe.component';
@@ -17,7 +17,7 @@ import { CreditCardDirective } from './credit-card.directive';
   declarations: [
     AppComponent,
     FrontComponent,
-   SecondPageComponent,
+  //  SecondPageComponent,
     MatchDirective,
    FinalComponent,
     SubscribeComponent,
